@@ -15,11 +15,11 @@ class Migration(migrations.Migration):
             name='Superhero',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('catchphrase', models.CharField(max_length=50)),
                 ('name', models.CharField(max_length=50)),
                 ('alter_ego', models.CharField(max_length=50)),
                 ('primary_ability', models.CharField(max_length=50)),
                 ('secondary_ability', models.CharField(max_length=50)),
-                ('catchphrase', models.CharField(max_length=50)),
             ],
         ),
     ]
