@@ -10,4 +10,4 @@ class Superhero(models.Model):
     catchphrase = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.name
+        return self.name, self.alter_ego, self.primary_ability, self.secondary_ability, self.catchphrase
