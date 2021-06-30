@@ -16,13 +16,11 @@ Including another URLconf
 from django.urls import path, include
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import RedirectView
 from SuperHerosProject.SuperHerosapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('new/', views.create, name='create'),
-    path('change/<int:superhero_id>', views.change, name='change'),
-    path('delete/<int:superhero_id>', views.delete, name='delete')
-    path('detail/<int:superhero_id>', views.detail, name='detail'),
+    path('SuperHerosapp/', include('SuperHerosapp.urls')),
+    path('', RedirectView.as_view(url='/SuperHerosapp/'))
 ]
