@@ -11,7 +11,7 @@ def index(request):
     context = {
         'all_superheroes': all_superheroes
     }
-    return render(request, 'SuperHeroesapp/index.html', context)
+    return render(request, 'SuperHerosapp/index.html', context)
 
 
 def create(request):

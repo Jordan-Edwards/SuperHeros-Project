@@ -6,11 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load static %}
-    <img src="{% static 'SuperHeroesapp' %}" alt="">
-    <link rel="stylesheet" href=" ">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Superheros</title>
 </head>
-<body>
-
+<body>ad
+    <h1>Cerebro's Database of Metahumans</h1>
+        <ul>
+            {% for superhero in all_superheros %}
+            <li><h2>{{superhero.name}}</h2></li>
+            <li><a href="{% url 'SuperHerosapp:detail' superhero.id %}">See more info</a></li>
+            <li><a href="{% url 'SuperHerosapp:change' superhero.id %}">Change Details Here</a></li>
+            <li><a href="{% url 'SuperHerosapp:delete' superhero.id %}">Delete</a></li>
+            {% endfor %}
+        </ul>
+    <a href="{% url 'SuperHerosapp:create' %}">Create a superhero!</a>
 </body>
 </html>
